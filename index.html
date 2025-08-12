@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+<link rel="icon" type="image/png" href="/traffic-icon.png" />
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet/dist/leaflet.css"
+/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Raasta Sathi - Real-time Traffic Intelligence</title>
+    <meta name="description" content="Collaborative traffic reporting system for citizens, police, and authorities" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    
+  </head>
+  <body>
+    <div id="root">
+       <div id="map"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    // Initialize the map
+    var map = L.map('map').setView([28.6139, 77.2090], 13); // New Delhi
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Add a marker
+    L.marker([28.6139, 77.2090]).addTo(map)
+      .bindPopup('You are here!')
+      .openPopup();
+  </script>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
