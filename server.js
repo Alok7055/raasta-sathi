@@ -78,7 +78,7 @@ const connectDB = async () => {
     if (!mongoURI) {
       console.log('⚠️  MongoDB URI not provided. Server will run without database connection.');
       console.log('   To connect to MongoDB, set MONGODB_URI in your .env file');
-      console.log('   Example: MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/raasta-sathi');
+     
       return;
     }
 
